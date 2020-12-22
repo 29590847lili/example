@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax实现进度条</title>
+	
+</head>
+<body>
+	<div style="width: 600px;height: 10px;border: 1px solid blue">
+        <div id="prog" style="height: 100%;width: 0%;background: blue;"></div>
+    </div>
+	<div id='status'></div>
+	<button id='start'>开始</button>
+</body>
+<script>
+	function ajax(){
+		var xhr = new XMLHttpRequest()
+		xhr.onreadystatechange = function(){
+			if(this.readyState === 4){
+				console.log('完成！')
+				/* if(this.status === 200){
+					console.log(xhr.responseText)
+				}else {
+					console.log(xhr.status)
+				} */
+			}
+		}
+		xhr.onprogress = function(event){
+			console.log(event)
+			var num = ((event.loaded / event.total) *100).toFixed(0);
+			document.getElementById('status').innerHTML = num + '%';
+			document.getElementById('prog').style.width = num + '%';
+			console.log(num);
+			
+		};
+		xhr.open('get', 'http://127.0.0.1:8080/data.json');
+		xhr.send();
+
+	}
+
+	var tag = document.getElementById('start');
+	tag.addEventListener('click', ajax);
+	
+	
+</script>
+</html>
