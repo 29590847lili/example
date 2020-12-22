@@ -7,6 +7,33 @@
 <body>
 </body>
 <script>
+function getQueryString(url) {
+    if (!url || !url.includes('?')) {
+        return {}
+    }
+    let result = {}
+    let paramStr = url.split('?')[1]
+    if (paramStr) {
+        let keyStartIndex = 0
+        let valueStartIndex = 0
+        let key = ''
+        let value = ''
+        for (let i = 0; i < paramStr.length; i++) {
+            let c = paramStr[i]
+            if (c == '=') {
+                key = paramStr.slice(keyStartIndex, i)
+                valueStartIndex = i + 1
+            }
+            if (c == '&' || i == paramStr.length - 1) {
+                value = paramStr.slice(valueStartIndex, i)
+                result[key] = value
+                keyStartIndex = i + 1
+            }
+        }
+    }
+
+    return result
+}
 
 function querys(url){
     var result = {},
