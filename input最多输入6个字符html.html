@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>input最多输入6个字符</title>
+	
+</head>
+<body>
+<input  type="text" id='demo'/>
+</body>
+<script>
+	var element = document.getElementById('demo');
+	element.addEventListener('input',function(event){
+		var value = element.value;
+		if(value.length > 6){
+			element.value = value.substring(0,6);
+		}
+	})
+</script>
+</html>
