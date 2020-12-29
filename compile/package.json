@@ -1,0 +1,20 @@
+{
+  "name": "compile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel index.js -o output.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "core-js": "^3.8.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-env": "^7.12.11"
+  }
+}
