@@ -1,0 +1,16 @@
+{
+  "name": "lili",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-plugin-react": "^7.21.5"
+  }
+}
