@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import Message from './plugin/message'
 Vue.config.productionTip = false
-
+Vue.use(Message,{size:'small'})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
